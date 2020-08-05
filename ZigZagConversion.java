@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class ZigZagConversion {
     public String convert(String s, int numRows) {
         if(numRows < 2){

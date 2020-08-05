@@ -6,4 +6,4 @@ My scratchbook for coding problems
 ## Some points taken
 * Largest common prefix problem thoughts
   * Approach by sorting: Sorting the array of strings and using the first and the last (most dissimilar) strings only to figure out the largest common prefix.
-  * Approach by Binary searching: Find the minimum length of the strings and apply the bisary search logic on the low mid and high values (based on the minimum length) on any string.
+  * Approach by using a Trie: Save all the strings into a Trie data structure and find the lone nodes from root till the first node that has more nodes in it and return the constructed prefix string.
