@@ -18,12 +18,15 @@ The brute force approach to this is by finding all the possible ways of creating
 This means that it would take 2<sup>n</sup> time to compute all the subsequences and an extra n time to find the largest subsequence resulting in a time complexity of **O(n * 2<sup>n</sup>)** for this approach. To find this programmatically consider the following cases:
 1. If either one of the strings is empty (s1 = 0 or s2 = 0) then the length of the common subsequence is 0
 2. If the last characters of both the substring are equal then we add one to the largest common subsequences.
-![LCS base case](https://latex.codecogs.com/gif.latex?\dpi{200}&space;\tiny&space;LCS(str1(0...s1-1),str2(0...s2-1))=LCS(str1(0...s1-2),str2(0...s2-2))&plus;1)
+
+![LCS base case](https://latex.codecogs.com/gif.latex?\dpi{200}&space;\small&space;LCS(str1(0...s1-1),str2(0...s2-1))=LCS(str1(0...s1-2),str2(0...s2-2))&plus;1)
+
 3. If the last characters are not the same then we check compare the last character of one with the second last character of the other substring and vice versa and take the max value of the two.
-![LCS base case](https://latex.codecogs.com/gif.latex?\dpi{150}&space;\small&space;LCS(str1(0...s1-1),str2(0...s2-1))=MAX(LCS(str1(0...s1-1),str2(0...s2-2)),&space;LCS(str1(0...s1-2),str2(0...s2-1))))
+
+![LCS last case](https://latex.codecogs.com/gif.latex?\dpi{200}&space;\small&space;LCS(str1(0...s1-1),str2(0...s2-1))=MAX(LCS(str1(0...s1-1),str2(0...s2-2)),LCS(str1(0...s1-2),str2(0...s2-1))))
 
 
-A recursive implementation is seen shown below:
+A recursive implementation for the above algorithm is shown below:
 ```java
   int getLongestCommonSubsequenceRecursive(String str1, String str2, int s1, int s2) {
         if(s1 == 0 || s2 == 0) {
