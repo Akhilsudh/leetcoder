@@ -6,3 +6,4 @@ My scratch-book for coding problems
 ## Notes taken
 * Largest common prefix problem explained [here](longest_common_prefix_problem/README.md)
 * Largest common subsequence problem explained [here](longest_common_subsequence/README.md)
+* Catalan Number problems explained [here](catalan_number/README.md)
