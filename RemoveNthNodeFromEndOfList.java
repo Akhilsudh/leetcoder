@@ -8,20 +8,16 @@ class ListNode {
 
 public class RemoveNthNodeFromEndOfList {
     public ListNode removeNthFromEnd(ListNode head, int n) {
-        ListNode a = head;
-        int counter = 1;
-        boolean flag = true;
-        while(a.next != null) {
-            a = a.next;
-            counter++;
+        ListNode a = head, b = head;
+        for(int i = 0; i < n; i++) {
+            b = b.next;
         }
-        System.out.println(counter);
-        if(counter == n) {
-            return head = head.next;
+        if(b == null) {
+            return head.next;
         }
-        a = head;
-        for(int i = 0; i < counter - n - 1; i++) {
+        while(b.next != null) {
             a = a.next;
+            b = b.next;
         }
         a.next = a.next.next;
         return head;
