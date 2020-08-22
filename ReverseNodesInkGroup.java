@@ -10,7 +10,7 @@ class ListNode {
 
 public class ReverseNodesInkGroup {
     public ListNode reverseKGroup(ListNode head, int k) {
-        return head;
+        return recursiveFunction(head, k);
     }
     public ListNode recursiveFunction(ListNode node, int k) {
         if(node == null) {
