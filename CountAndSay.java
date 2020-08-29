@@ -1,26 +1,31 @@
 public class CountAndSay {
     public static String countAndSay(int n) {
-        String result = "1";
-        String temp = "";
-        for(int i = 1; i < n; i++) {
-            char start = result.charAt(0);
-            int count = 0;
-            temp = "";
-            for(int j = 0; j < result.length(); j++) {
-                if(start != result.charAt(j)) {
-                    temp = temp + count + start;
-                    start = result.charAt(j);
-                    count = 1;
-                    continue;
-                }
-                count++;
-            }
-            result = temp + count + start;
+        if(n <= 1) {
+            return "1";
         }
-        return result;
+        String res = countAndSay(n - 1);
+        StringBuffer temp = new StringBuffer();
+        char start = res.charAt(0);
+        int count = 0;
+        for(int j = 0; j < res.length(); j++) {
+            if(start != res.charAt(j)) {
+                temp.append(count).append(start);
+                start = res.charAt(j);
+                count = 1;
+                continue;
+            }
+            count++;
+        }
+        return temp.append(count).append(start).toString();
     }
 
     public static void main(String args[]) {
+        System.out.println(countAndSay(0));
+        System.out.println(countAndSay(1));
+        System.out.println(countAndSay(2));
+        System.out.println(countAndSay(3));
+        System.out.println(countAndSay(4));
         System.out.println(countAndSay(5));
+        System.out.println(countAndSay(6));
     }
 }
