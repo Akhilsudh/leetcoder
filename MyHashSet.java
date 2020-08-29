@@ -17,7 +17,7 @@ public class MyHashSet {
     public void add(int key) {
         int hash = hashCode(key);
         if(hashSet[hash] == null) {
-            LinkedList <Integer> list = new LinkedList();
+            LinkedList <Integer> list = new LinkedList<Integer>();
             list.add(key);
             hashSet[hash] = list;
             numElements++;
@@ -41,7 +41,7 @@ public class MyHashSet {
         if(hashSet[hash] != null) {
             for(int item: hashSet[hash]) {
                 if(item == key) {
-                    hashSet[hash].remove(new Integer(key));
+                    hashSet[hash].remove(Integer.valueOf(key));
                     numElements--;
                     return;
                 }
