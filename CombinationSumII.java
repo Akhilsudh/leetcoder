@@ -9,17 +9,16 @@ public class CombinationSumII {
     }
 
     private void backTrack(int[] candidates, Set<List<Integer>> results, List<Integer> result, int index, int target) {
-        if(target < 0) {
-            return;
-        }
-        else if(target == 0) {
+        if(target == 0) {
             results.add(new ArrayList<Integer>(result));
             return;
         }
         else if(index < candidates.length) {
-            result.add(candidates[index]);
-            backTrack(candidates, results, result, index + 1, target - candidates[index]);
-            result.remove(result.size() - 1);
+            if(target - candidates[index] >= 0) {
+                result.add(candidates[index]);
+                backTrack(candidates, results, result, index + 1, target - candidates[index]);
+                result.remove(result.size() - 1);
+            }
             backTrack(candidates, results, result, index + 1, target);
         }
         else {
