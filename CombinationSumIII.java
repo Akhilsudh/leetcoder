@@ -16,13 +16,12 @@
 
 public class CombinationSumIII {
     public List<List<Integer>> combinationSum3(int k, int n) {
-        int[] arr = {1,2,3,4,5,6,7,8,9};
         List<List<Integer>> result = new ArrayList<List<Integer>>();
-        helper(arr, result, new ArrayList<Integer>(), 0, k, n);
+        helper(result, new ArrayList<Integer>(), 1, k, n);
         return result;
     }
-
-    private void helper(int[] arr, List<List<Integer>> result, List<Integer> list,int index, int k, int n) {
+    
+    private void helper(List<List<Integer>> result, List<Integer> list,int index, int k, int n) {
         if(k == 0) {
             if(n == 0) {
                 result.add(new ArrayList<Integer>(list));
@@ -30,13 +29,13 @@ public class CombinationSumIII {
             }
             return;
         }
-        else if(index < arr.length) {
-            if(n - arr[index] >= 0) {
-                list.add(arr[index]);
-                helper(arr, result, list, index + 1, k - 1, n - arr[index]);
+        else if(index <= 9) {
+            if(n - index >= 0) {
+                list.add(index);
+                helper(result, list, index + 1, k - 1, n - index);
                 list.remove(list.size() - 1);
             }
-            helper(arr, result, list, index + 1, k, n);
+            helper(result, list, index + 1, k, n);
             return;   
         }
         else {
