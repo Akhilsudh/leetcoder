@@ -19,27 +19,19 @@
 import java.util.*;
 public class ValidAnagram {
     public boolean isAnagram(String s, String t) {
-        Map<Character, Integer> sMap = new HashMap<Character, Integer>();
-        Map<Character, Integer> tMap = new HashMap<Character, Integer>();
         if(s.length() == t.length()) {
             char[] sArr = s.toCharArray();
             char[] tArr = t.toCharArray();
-            for(int i = 0; i < s.length(); i++) {
-                if(!sMap.containsKey(sArr[i])) {
-                    sMap.put(sArr[i], 1);
-                }
-                else {
-                    sMap.put(sArr[i], sMap.get(sArr[i]) + 1);
-                }
-                if(!tMap.containsKey(tArr[i])) {
-                    tMap.put(tArr[i], 1);
-                }
-                else {
-                    tMap.put(tArr[i], tMap.get(tArr[i]) + 1);
-                }
-            }
-            return sMap.equals(tMap);
+            Arrays.sort(sArr);
+            Arrays.sort(tArr);
+            return Arrays.equals(sArr, tArr);
         }
         return false;
     }
 }
+
+/*
+    Another possible solution is to use a character array with the length of the number of characters and
+    add the counter for each occurance of a charcter in the s string and then subtract the counter and 
+    return false whenever a negative vaue is encountered return false else return true.
+*/
