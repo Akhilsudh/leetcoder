@@ -24,44 +24,25 @@ import java.util.*;
 
 public class GroupAnagrams {
     public List<List<String>> groupAnagrams(String[] strs) {
-        boolean[] flag = new boolean[strs.length];
-        List<List<String>> results = new ArrayList<List<String>>();
-        for(int i = 0; i < strs.length; i++) {
-            if(flag[i] == true) {
+        Map<String, List<String>> results= new HashMap<String, List<String>>();
+        for(String word: strs) {
+            String key = generateKey(word);
+            if(!results.containsKey(key)) {
+                List<String> list = new ArrayList<String>();
+                list.add(word);
+                results.put(key, list);
                 continue;
             }
-            flag[i] = true;
-            List<String> result = new ArrayList<String>();
-            Map<Character, Integer> temp1 = new HashMap<Character, Integer>();
-            int m = strs[i].length();
-            for(int k = 0; k < m; k++) {
-                if(!temp1.containsKey(strs[i].charAt(k))) {
-                    temp1.put(strs[i].charAt(k), 1);
-                    continue;
-                }
-                temp1.put(strs[i].charAt(k), temp1.get(strs[i].charAt(k)) + 1);
-            }
-            result.add(strs[i]);
-            for(int j = i + 1; j < strs.length; j++) {
-                if(flag[j] == true) {
-                    continue;
-                }
-                Map<Character, Integer> temp2 = new HashMap<Character, Integer>();
-                int n = strs[j].length();
-                for(int k = 0; k < n; k++) {
-                    if(!temp2.containsKey(strs[j].charAt(k))) {
-                        temp2.put(strs[j].charAt(k), 1);
-                        continue;
-                    }
-                    temp2.put(strs[j].charAt(k), temp2.get(strs[j].charAt(k)) + 1);
-                }
-                if(temp2.equals(temp1)) {
-                    flag[j] = true;
-                    result.add(strs[j]);
-                }
-            }
-            results.add(result);
+            results.get(key).add(word);
         }
-        return results;
+        return new ArrayList<List<String>>(results.values());
+    }
+    private String generateKey(String word) {
+        int[] charSet = new int[26];
+        char[] wordArr = word.toCharArray();
+        for(char letter: wordArr) {
+            charSet[letter - 'a']++;
+        }
+        return Arrays.toString(charSet);
     }
 }
