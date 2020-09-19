@@ -16,7 +16,7 @@
     with the first five elements of nums being modified to 0, 1, 2, 3, and 4 respectively.
     It doesn't matter what values are set beyond the returned length.
 */
-import java.util.Arrays;
+
 public class RemoveDuplicatesFromSortedArray {
     public static int removeDuplicates(int[] nums) {
         if(nums.length == 0) {
@@ -28,19 +28,10 @@ public class RemoveDuplicatesFromSortedArray {
             if(diffVal != nums[i]) {
                 diffVal = nums[i];
                 index = index + 1;
-                swap(nums, index, i);
+                nums[index] = nums[i];
             }
         }
         return index + 1;
-    }
-
-    private static void swap(int[] arr, int index1, int index2) {
-        if(arr[index1] != arr[index2]) {
-            arr[index1] = arr[index1] ^ arr[index2];
-            arr[index2] = arr[index1] ^ arr[index2];
-            arr[index1] = arr[index1] ^ arr[index2];
-        }
-        return;
     }
 
     public static void main(String args[]) {
