@@ -37,11 +37,17 @@ public class ScrambleString {
             return true;
         }
         else{
+            char[] letters = new char[26];
+            for(int i = 0; i < s1.length(); i++) {
+                letters[s1.charAt(i) - 'a']++;
+                letters[s2.charAt(i) - 'a']--;
+            }
+            for (int i=0; i<26; i++) if (letters[i]!=0) return false;
             for(int i = 1; i < s1.length(); i++) {
                 if(isScramble(s1.substring(0, i), s2.substring(0, i)) && isScramble(s1.substring(i), s2.substring(i))) {
                     return true;   
                 }
-                if(isScramble(s1.substring(s1.length() - i), s2.substring(0, i)) && isScramble(s1.substring(0, s1.length() - i), s2.substring(i))) {
+                if(isScramble(s1.substring(0, i), s2.substring(s2.length() - i)) && isScramble(s1.substring(i), s2.substring(0, s1.length() - i))) {
                     return true;
                 }
             }
@@ -53,6 +59,6 @@ public class ScrambleString {
         System.out.println(isScramble("great", "rgeat"));
         System.out.println(isScramble("abcde", "caebd"));
         System.out.println(isScramble("abcdefghijklmnopq", "efghijklmnopqcadb"));
-
+        System.out.println(isScramble("oatzzffqpnwcxhejzjsnpmkmzngneo", "acegneonzmkmpnsjzjhxwnpqffzzto"));
     }
 }
