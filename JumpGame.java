@@ -15,19 +15,21 @@
     which makes it impossible to reach the last index.
 */
 public class JumpGame {
-    public boolean canJump(int[] nums) {
-        return recursive(nums, 0);
-    }
-    private boolean recursive(int[] nums, int index) {
-        if(index == nums.length - 1) {
-            return true;
-        }
-        else {
-            boolean result = false;
-            for(int i = 1; i <= nums[index]; i++) {
-                result = result | recursive(nums, Math.min(nums.length - 1, index + i));
+    public static boolean canJump(int[] nums) {
+        boolean[] dp = new boolean[nums.length];
+        dp[nums.length - 1] = true;
+        for(int i = nums.length - 1; i >= 0; i--) {
+            for(int j = 0; j <= nums[i]; j++) {
+                if(dp[i + j] == true) {
+                    dp[i] = true;
+                    break;
+                }
             }
-            return result;
         }
+        return dp[0];
+    }
+    public static void main(String args[]) {
+        System.out.println(canJump(new int[]{2,3,1,1,4}));
+        System.out.println(canJump(new int[]{3,2,1,0,4}));
     }
 }
