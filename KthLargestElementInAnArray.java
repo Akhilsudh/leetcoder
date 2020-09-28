@@ -16,26 +16,16 @@ import java.util.*;
 public class KthLargestElementInAnArray {
     public int findKthLargest(int[] nums, int k) {
         PriorityQueue<Integer> minHeap = new PriorityQueue<Integer>();
-        int count = 0;
-        for(int num: nums) {
-            if(minHeap.peek() == null){
-                minHeap.add(num);
-                count = 1;
+        minHeap.add(nums[0]);
+        int count = 1;
+        for(int i = 1; i < nums.length; i++) {
+            if(count < k) {
+                count++;
+                minHeap.add(nums[i]);
             }
-            else if(minHeap.peek() != null && minHeap.peek() < num) {
-                if(count < k) {
-                    count++;   
-                }
-                else if(count == k) {
-                    minHeap.poll();
-                }
-                minHeap.add(num);
-            }
-            else {
-                if(count < k) {
-                    count++;
-                    minHeap.add(num);
-                }
+            else if(count == k && minHeap.peek() < nums[i]) {
+                minHeap.poll();
+                minHeap.add(nums[i]);
             }
         }
         return minHeap.poll();
