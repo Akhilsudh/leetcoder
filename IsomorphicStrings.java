@@ -19,17 +19,15 @@
 import java.util.*;
 public class IsomorphicStrings {
     public boolean isIsomorphic(String s, String t) {
-        Map<Character, Character> letterMap = new HashMap<Character, Character>();
+        int[] sMap = new int[256];
+        int[] tMap = new int[256];
+        char c1, c2;
         for(int i = 0; i < s.length(); i++) {
-            if(!letterMap.containsKey(s.charAt(i))) {
-                if(letterMap.containsValue(t.charAt(i))) {
-                    return false;
-                }
-                letterMap.put(s.charAt(i), t.charAt(i));
-            }
-            else if(letterMap.get(s.charAt(i)) != t.charAt(i)) {
+            if(sMap[c1 = s.charAt(i)] != tMap[c2 = t.charAt(i)]) {
                 return false;
             }
+            sMap[c1] = i + 1;
+            tMap[c2] = i + 1;
         }
         return true;
     }
