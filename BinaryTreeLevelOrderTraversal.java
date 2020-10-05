@@ -35,32 +35,24 @@ public class BinaryTreeLevelOrderTraversal {
         if(root == null) {
             return result;
         }
-        int index = 1;
-        while(true) {
+        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+        queue.add(root);
+        while(!queue.isEmpty()) {
+            int n = queue.size();
             List<Integer> list  = new ArrayList<Integer>();
-            printGivenLevel(list, root, index);
-            if(list.isEmpty()) {
-                break;
+            for(int i = 0; i < n; i++) {
+                TreeNode temp = queue.poll();
+                list.add(temp.val);
+                if(temp.left != null) {
+                    queue.add(temp.left);   
+                }
+                if(temp.right != null) {
+                    queue.add(temp.right);   
+                }
             }
-            index++;
             result.add(list);
         }
         return result;
-    }
-
-    private void printGivenLevel(List<Integer> list, TreeNode root, int level) {
-        if(root == null) {
-            return;
-        }
-        else if(level == 1) {
-            list.add(root.val);
-            return;
-        }
-        else if(level > 1) {
-            printGivenLevel(list, root.left, level - 1);
-            printGivenLevel(list, root.right, level - 1);
-            return;
-        }
     }
 
     public static void main(String[] args) {
