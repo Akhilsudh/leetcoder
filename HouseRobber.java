@@ -18,7 +18,18 @@
 */
 public class HouseRobber {
     public int rob(int[] nums) {
-        return recurse(nums, 0);
+        if(nums.length == 0) {
+            return 0;
+        }
+        int [] result = new int[nums.length];
+        int val1, val2;
+        result[0] = 0;
+        for(int i = 0; i < nums.length; i++) {
+            val1 = (0 > i - 2) ? 0 : result[i - 2];
+            val2 = (0 > i - 1) ? 0 : result[i - 1];
+            result[i] = Math.max(nums[i] + val1, val2);
+        }
+        return result[nums.length - 1];
     }
 
     private int recurse(int[] nums, int index) {
