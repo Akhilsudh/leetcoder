@@ -18,31 +18,22 @@
 */
 public class HouseRobber {
     public int rob(int[] nums) {
-        if(nums.length == 0) {
-            return 0;
+        if(nums.length < 2) {
+            return (nums.length == 0) ? 0 : nums[0];
         }
         int [] result = new int[nums.length];
-        int val1, val2;
-        result[0] = 0;
-        for(int i = 0; i < nums.length; i++) {
-            val1 = (0 > i - 2) ? 0 : result[i - 2];
-            val2 = (0 > i - 1) ? 0 : result[i - 1];
-            result[i] = Math.max(nums[i] + val1, val2);
+        result[0] = nums[0];
+        result[1] = Math.max(nums[0], nums[1]);
+        for(int i = 2; i < nums.length; i++) {
+            result[i] = Math.max(nums[i] + result[i - 2], result[i - 1]);
         }
         return result[nums.length - 1];
     }
 
-    private int recurse(int[] nums, int index) {
-        if(index >= nums.length) {
-            return 0;
-        }
-        else {
-            return Math.max(nums[index] + recurse(nums, index + 2), recurse(nums, index + 1));
-        }
-    }
-
     public static void main(String[] args) {
         HouseRobber obj = new HouseRobber();
+        System.out.println(obj.rob(new int[] {1}));
+        System.out.println(obj.rob(new int[] {3,1}));
         System.out.println(obj.rob(new int[] {1,2,3,1}));
         System.out.println(obj.rob(new int[] {2,7,9,3,1}));
         System.out.println(obj.rob(new int[] {2,7,9,3,1,10,2}));
