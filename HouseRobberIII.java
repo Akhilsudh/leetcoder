@@ -26,25 +26,31 @@
     Output: 9
     Explanation: Maximum amount of money the thief can rob = 4 + 5 = 9.
 */
+import java.util.*;
 public class HouseRobberIII {
     public int rob(TreeNode root) {
-        return dfs(root);
+        Map<TreeNode, Integer> dp = new HashMap<TreeNode, Integer>();
+        return dfs(root, dp);
     }
-    private int dfs(TreeNode node) {
+    private int dfs(TreeNode node, Map<TreeNode, Integer> dp) {
         if(node == null) {
             return 0;
+        }
+        else if(dp.containsKey(node)) {
+            return dp.get(node);
         }
         else {
             int result1 = 0;
             if(node.left != null) {
-                result1 += dfs(node.left.left) + dfs(node.left.right);
+                result1 += dfs(node.left.left, dp) + dfs(node.left.right, dp);
             }
             if(node.right != null) {
-                result1 += dfs(node.right.left) + dfs(node.right.right);
+                result1 += dfs(node.right.left, dp) + dfs(node.right.right, dp);
             }
             result1 += node.val;
-            int result2 = dfs(node.left) + dfs(node.right);
-            return Math.max(result1, result2);
+            int result2 = dfs(node.left, dp) + dfs(node.right, dp);
+            dp.put(node, Math.max(result1, result2));
+            return dp.get(node);
         }
     }
 }
