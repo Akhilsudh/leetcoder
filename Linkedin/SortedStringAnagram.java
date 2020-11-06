@@ -1,5 +1,5 @@
 package Linkedin;
-/*
+/*  Linkedin Series Easy
     Given an array of strings, remove each string that is an anagram of an 
     earlier string, then return the remaining array in sorted order.
 */
@@ -11,24 +11,24 @@ public class SortedStringAnagram {
     for(String word: words) {
       char[] wordArr = word.toCharArray();
       Arrays.sort(wordArr);
-      String w = wordArr.toString();
+      String w = new String(wordArr);
       if(!set.contains(w)) {
         set.add(w);
         result.add(word);
       }
     }
     String[] resultArr = new String[result.size()];
-    System.out.println(resultArr.toString());
-    return result.toArray(resultArr);
+    Arrays.sort(result.toArray(resultArr));
+    return resultArr;
   }
   public static void main(String[] args) {
     SortedStringAnagram obj = new SortedStringAnagram();
-    String[] testCase = new String[]{"akhil", "likha", "nikki", "iikkn", "vish", "bash"};
-    for(String word: testCase) {
-      System.out.println("hello");
-    }
-    System.out.println(testCase.toString());
+    String[] testCase = new String[]{"sudh", "akil", "ilka", "udsh", "blah", "bash"};
     String[] res = obj.sortArray(testCase);
-    System.out.println(res.toString());
+    System.out.print("[");
+    for(String word: res) {
+      System.out.print(word + " ");
+    }
+    System.out.println("]");
   }
 }
