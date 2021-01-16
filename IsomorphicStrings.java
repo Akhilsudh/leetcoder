@@ -16,7 +16,6 @@
         Output: true
     Note: You may assume both s and t have the same length.
 */
-import java.util.*;
 public class IsomorphicStrings {
     public boolean isIsomorphic(String s, String t) {
         int[] sMap = new int[256];

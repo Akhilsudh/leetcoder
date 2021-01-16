@@ -74,7 +74,7 @@ public class AddTwoNumbers {
         obj.printNumber(obj.addTwoNumbers(l1, l2));
         l1 = obj.createListNodes("9999999");
         l2 = obj.createListNodes("9999");
-        obj.printNumber(obj.addTwoNumbers(l1, l2));d
+        obj.printNumber(obj.addTwoNumbers(l1, l2));
     }
 
 }
