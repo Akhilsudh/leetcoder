@@ -9,14 +9,12 @@ public class LinkedListCycle {
     public boolean hasCycle(ListNode head) {
         ListNode a = head;
         ListNode b = head;
-        boolean flag = false;
         while(a != null && b != null && b.next != null) {
-            if(a == b && flag) {
-                return true;
-            }
-            flag  = true;
             a = a.next;
             b = b.next.next;
+            if(a == b) {
+                return true;
+            }
         }
         return false;
     }
