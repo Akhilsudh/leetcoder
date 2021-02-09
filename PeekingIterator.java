@@ -47,5 +47,5 @@ class PeekingIterator implements Iterator<Integer> {
         else {
             next = null;
         }
-}
+    }
 }
