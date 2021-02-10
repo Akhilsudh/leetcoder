@@ -31,34 +31,20 @@ class Node {
 public class CopyListWithRandomPointer {
     public Node copyRandomList(Node head) {
         Map<Node, Node> map = new HashMap<Node, Node>();
-        Node copy = new Node(head.val);
         Node node = head;
-        while(node == null) {
-            // Node copy = new Node(node);
-            Node tempNext = null;
-            Node tempRand = null;
-            if(node.next != null) {
-                tempNext = (map.containsKey(node.next)) ? map.get(node.next) : new Node(node.next.val);
-            }
-            if(node.random != null) {
-                tempRand = (map.containsKey(node.random)) ? map.get(node.random) : new Node(node.random.val);
-            }
-            copy.val = node.val;
-            copy.next = tempNext;
-            copy.random = tempRand;
-            if(!map.containsKey(node)) {
-                System.out.println("I am here");
-                map.put(node, copy);
-                if(node.next != null) {
-                    map.put(node.next, tempNext);   
-                }
-                if(node.random != null) {
-                    map.put(node.random, tempRand);   
-                }
-            }
+        while(node != null) {
+            Node temp = new Node(node.val);
+            map.put(node, temp);
+            node = node.next;
+        }
+        node = head;
+        Node copy = map.get(head);
+        while(node != null) {
+            copy.next = (node.next == null) ? null : map.get(node.next);
+            copy.random = (node.random == null) ? null : map.get(node.random);
+            node = node.next;
             copy = copy.next;
         }
-        System.out.println(map);
         return map.get(head);
     }
 }
