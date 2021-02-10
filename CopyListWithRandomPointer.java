@@ -28,22 +28,20 @@ class Node {
         this.random = null;
     }
 }
+
 public class CopyListWithRandomPointer {
     public Node copyRandomList(Node head) {
         Map<Node, Node> map = new HashMap<Node, Node>();
-        Node node = head;
-        while(node != null) {
-            Node temp = new Node(node.val);
-            map.put(node, temp);
-            node = node.next;
+        Node old_node = head;
+        while(old_node != null) {
+            Node temp = new Node(old_node.val);
+            map.put(old_node, temp);
+            old_node = old_node.next;
         }
-        node = head;
-        Node copy = map.get(head);
-        while(node != null) {
-            copy.next = (node.next == null) ? null : map.get(node.next);
-            copy.random = (node.random == null) ? null : map.get(node.random);
-            node = node.next;
-            copy = copy.next;
+        for(Node node: map.keySet()) {
+            Node new_node = map.get(node);
+            new_node.next = map.get(node.next);
+            new_node.random = map.get(node.random);
         }
         return map.get(head);
     }
