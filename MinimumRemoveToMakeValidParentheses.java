@@ -18,8 +18,6 @@
       Output: ""
       Explanation: An empty string is also valid.
 */
-import java.util.*;
-
 public class MinimumRemoveToMakeValidParentheses {
   public String minRemoveToMakeValid(String s) {
     char[] sarr = s.toCharArray();

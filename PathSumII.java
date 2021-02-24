@@ -20,13 +20,13 @@
 */
 import java.util.*;
 // Definition for a binary tree node.
-class TreeNode {
+class TreeNode2 {
     int val;
-    TreeNode left;
-    TreeNode right;
-    TreeNode() {}
-    TreeNode(int val) { this.val = val; }
-    TreeNode(int val, TreeNode left, TreeNode right) {
+    TreeNode2 left;
+    TreeNode2 right;
+    TreeNode2() {}
+    TreeNode2(int val) { this.val = val; }
+    TreeNode2(int val, TreeNode2 left, TreeNode2 right) {
         this.val = val;
         this.left = left;
         this.right = right;
@@ -34,13 +34,12 @@ class TreeNode {
 }
 
 public class PathSumII {
-    public List<List<Integer>> pathSum(TreeNode root, int sum) {
+    public List<List<Integer>> pathSum(TreeNode2 root, int sum) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
-        List<Integer> list = new ArrayList<Integer>();
         helper(root, result, new ArrayList<Integer>(), sum);
         return result;
     }
-    private void helper(TreeNode node, List<List<Integer>> result, List<Integer> list, int sum) {
+    private void helper(TreeNode2 node, List<List<Integer>> result, List<Integer> list, int sum) {
         if(node == null) {
             return;
         }
