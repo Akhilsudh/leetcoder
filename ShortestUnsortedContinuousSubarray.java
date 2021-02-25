@@ -24,21 +24,20 @@ public class ShortestUnsortedContinuousSubarray {
     int max = Integer.MIN_VALUE;
     int min = Integer.MAX_VALUE;
     for(int i = 0; i < nums.length; i++) {
-      if(max <= nums[i]) {
-        max = nums[i];
-      }
-      if(nums[i] < max) {
-        end = i;
-      }
+      max = Math.max(max, nums[i]);
+      end = (nums[i] < max) ? i : end;
     }
     for(int i = nums.length - 1; i >= 0; i--) {
-      if(min >= nums[i]) {
-        min = nums[i];
-      }
-      if(nums[i] > min) {
-        begin = i;
-      }
+      min = Math.min(min, nums[i]);
+      begin = (nums[i] > min) ? i : begin;
     }
     return end - begin + 1;
+  }
+
+  public static void main(String[] args) {
+    ShortestUnsortedContinuousSubarray obj = new ShortestUnsortedContinuousSubarray();
+    System.out.println("The length of the shortes subarray to be sorted to sort the whole array [2,6,4,8,10,9,15] = " + obj.findUnsortedSubarray(new int[] {2,6,4,8,10,9,15}));
+    System.out.println("The length of the shortes subarray to be sorted to sort the whole array [1,2,3,4] = " + obj.findUnsortedSubarray(new int[] {1,2,3,4}));
+    System.out.println("The length of the shortes subarray to be sorted to sort the whole array [1] = " + obj.findUnsortedSubarray(new int[] {1}));
   }
 }
