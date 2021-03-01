@@ -25,43 +25,38 @@ import java.util.*;
 class FreqStack {
   Map <Integer, Integer> frequencyMap;
   Map <Integer, Stack<Integer>> frequencyStackMap;
-  int maxFrequency;
 
   public FreqStack() {
     frequencyMap = new HashMap<Integer, Integer>();
     frequencyStackMap = new HashMap<Integer, Stack<Integer>>();
-    maxFrequency = 0;
   }
   
   public void push(int x) {
     int frequency;
     if(frequencyMap.containsKey(x)) {
       frequency = frequencyMap.get(x) + 1;
-      frequencyMap.put(x, frequency);
     }
     else {
       frequency = 1;
-      frequencyMap.put(x, frequency);
     }
-    maxFrequency = Math.max(maxFrequency, frequency);
+    frequencyMap.put(x, frequency);
     Stack<Integer> s;
     if(frequencyStackMap.containsKey(frequency)) {
       s = frequencyStackMap.get(frequency);
-      s.push(x);
     }
     else {
       s = new Stack<Integer>();
-      s.push(x);
       frequencyStackMap.put(frequency, s);
     }
+    s.push(x);
   }
-  
+
   public int pop() {
+      int maxFrequency = frequencyStackMap.size();
       Stack<Integer> s = frequencyStackMap.get(maxFrequency);
       int result = s.pop();
       if(s.isEmpty()) {
         frequencyStackMap.remove(maxFrequency);
-        maxFrequency -= 1;
       }
       frequencyMap.put(result, frequencyMap.get(result) - 1);
       return result;
