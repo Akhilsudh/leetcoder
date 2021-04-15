@@ -13,11 +13,7 @@
 #       Input: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
 #        Output: [8,9,9,9,0,0,0,1]
 
-# Definition for singly-linked list.
-class ListNode:
-  def __init__(self, val = 0, next = None):
-    self.val = val
-    self.next = next
+from ListNode import ListNode
 
 class AddTwoNumbers:
   def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
