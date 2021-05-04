@@ -1,4 +1,3 @@
-package Linkedin;
 /*  Linkedin Series Medium
     Given two strings , s and t, create a function that operates per the following rules :
       Find whether string s is divisibe by string t. 

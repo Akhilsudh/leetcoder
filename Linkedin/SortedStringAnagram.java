@@ -1,4 +1,3 @@
-package Linkedin;
 /*  Linkedin Series Easy
     Given an array of strings, remove each string that is an anagram of an 
     earlier string, then return the remaining array in sorted order.

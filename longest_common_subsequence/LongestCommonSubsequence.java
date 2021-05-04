@@ -1,5 +1,3 @@
-package longest_common_subsequence;
-
 public class LongestCommonSubsequence {
     int getLongestCommonSubsequenceRecursive(String str1, String str2, int s1, int s2) {
         if(s1 == 0 || s2 == 0) {

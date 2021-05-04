@@ -1,4 +1,3 @@
-package Amazon;
 /*  https://www.youtube.com/watch?v=fbd-TjSqQ3M&t=607s
     You are givien a keypad (example 1-9). Along with it you are given a starting number and a length. A set is taken as how
     a knnight in a chess board would. There are also two places on the keypad which are invalid positions to fall upon. Upon 

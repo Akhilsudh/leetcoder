@@ -1,5 +1,3 @@
-package longest_common_prefix_problem;
-
 import java.io.*;
 
 // minimal Trie data structure to save the strings

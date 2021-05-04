@@ -1,5 +1,3 @@
-package tiling_problem;
-
 public class TilingProblemRecursive {
     static int numberOfWays(int n, int m) {
         if(n == 1 || n < m) {

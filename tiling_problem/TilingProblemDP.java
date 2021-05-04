@@ -1,5 +1,3 @@
-package tiling_problem;
-
 public class TilingProblemDP {
     static int numberOfWays(int n, int m) {
         int[] lookupTable = new int[n + 1];

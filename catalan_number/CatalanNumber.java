@@ -1,5 +1,3 @@
-package catalan_number;
-
 public class CatalanNumber {
     static int getNCatalanNumber(int N) {
         int[] catalan = new int[N + 1];

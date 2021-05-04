@@ -1,4 +1,3 @@
-package Amazon;
 /*
     Given a positive integer N, and a starting point 1 one can perform 
     any of the following 2 operations in one step:
