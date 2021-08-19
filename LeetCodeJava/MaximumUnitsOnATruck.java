@@ -1,3 +1,6 @@
+import java.util.Comparator;
+import java.util.PriorityQueue;
+
 /*  https://leetcode.com/problems/maximum-units-on-a-truck/
     You are assigned to put some amount of boxes onto one truck. You are given a 2D array boxTypes, 
     where boxTypes[i] = [numberOfBoxesi, numberOfUnitsPerBoxi]:
@@ -25,17 +28,18 @@
 public class MaximumUnitsOnATruck {
   
   public int maximumUnits(int[][] boxTypes, int truckSize) {
-    int[] totalBoxesForUnits = new int[1000];
-    for(int[] box: boxTypes) {
-      totalBoxesForUnits[box[1] - 1] += box[0];
+    PriorityQueue<int[]> queue = new PriorityQueue<>((x, y) -> Integer.compare(y[1], x[1]));
+    for(int[] boxType: boxTypes) {
+      queue.add(boxType);
     }
     int maximumUnits = 0;
-    for(int i = 1000; i > 0; i--) {
-      if(truckSize < 0) {
+    while(!queue.isEmpty()) {
+      int[] item = queue.poll();
+      if(truckSize == 0) {
         break;
       }
-      int spaceToFill = Math.min(truckSize, totalBoxesForUnits[i - 1]);
-      maximumUnits += spaceToFill * i;
+      int spaceToFill = Math.min(truckSize, item[0]);
+      maximumUnits += spaceToFill * item[1];
       truckSize -= spaceToFill;
     }
     return maximumUnits;
