@@ -1,0 +1,11 @@
+{
+  "java.project.sourcePaths": [ 
+    "LeetCodeJava",
+    "Amazon",
+    "catalan_number",
+    "Linkedin",
+    "longest_common_prefix_problem",
+    "longest_common_subsequence",
+    "tiling_problem"
+  ]
+}
