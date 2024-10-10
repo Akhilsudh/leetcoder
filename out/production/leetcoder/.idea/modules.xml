@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/FunctionalProgrammingPlayground/StreamsPlayground.iml" filepath="$PROJECT_DIR$/FunctionalProgrammingPlayground/StreamsPlayground.iml" />
       <module fileurl="file://$PROJECT_DIR$/leetcoder.iml" filepath="$PROJECT_DIR$/leetcoder.iml" />
     </modules>
   </component>
