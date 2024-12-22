@@ -1,6 +1,6 @@
 package Grind75;
 
-public class MergeTwoSortedLists {
+public class _3_MergeTwoSortedLists {
 
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
             ListNode result = new ListNode();
@@ -37,7 +37,7 @@ public class MergeTwoSortedLists {
         ListNode list2 = new ListNode(1);
         list2.next = new ListNode(3);
         list2.next.next = new ListNode(4);
-        MergeTwoSortedLists obj = new MergeTwoSortedLists();
+        _3_MergeTwoSortedLists obj = new _3_MergeTwoSortedLists();
         ListNode result1 = obj.mergeTwoLists(list1, list2);
         System.out.println(result1.val);
     }

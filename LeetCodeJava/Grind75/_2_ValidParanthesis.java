@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
 
-public class ValidParanthesis {
+public class _2_ValidParanthesis {
     public boolean isValid(String s) {
         Stack<Character> bracketStack = new Stack<>();
         for(int i = 0; i < s.length(); i++) {
@@ -27,7 +27,7 @@ public class ValidParanthesis {
     }
 
     public static void main(String[] args) {
-        ValidParanthesis obj = new ValidParanthesis();
+        _2_ValidParanthesis obj = new _2_ValidParanthesis();
         System.out.println(obj.isValid("()"));
         System.out.println(obj.isValid("()[]{}"));
         System.out.println(obj.isValid("(]"));
