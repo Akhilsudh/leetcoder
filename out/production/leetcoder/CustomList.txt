@@ -1,0 +1,80 @@
+1. [Two Sum](https://leetcode.com/problems/two-sum/) - Easy
+2. [Task Scheduler](https://leetcode.com/problems/task-scheduler/) - Medium
+3. [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/) - Easy
+4. [Number of Islands](https://leetcode.com/problems/number-of-islands/) - Medium
+5. [Course Schedule](https://leetcode.com/problems/course-schedule/) - Medium
+6. Find the Number of Possible Ways for an Event - Hard (Custom problem)
+7. [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) - Medium
+8. [Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/) - Easy
+9. [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) - Easy
+10. [LRU Cache](https://leetcode.com/problems/lru-cache/) - Medium
+11. [Reorganize String](https://leetcode.com/problems/reorganize-string/) - Medium
+12. [Merge Strings Alternately](https://leetcode.com/problems/merge-strings-alternately/) - Easy
+13. [Group Anagrams](https://leetcode.com/problems/group-anagrams/) - Medium
+14. [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/) - Hard
+15. [Koko Eating Bananas](https://leetcode.com/problems/koko-eating-bananas/) - Medium
+16. [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/) - Medium
+17. [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/) - Medium
+18. [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/) - Easy
+19. [Course Schedule II](https://leetcode.com/problems/course-schedule-ii/) - Medium
+20. [Meeting Rooms II](https://leetcode.com/problems/meeting-rooms-ii/) - Medium
+21. [Maximum Width Ramp](https://leetcode.com/problems/maximum-width-ramp/) - Medium
+22. [Lowest Common Ancestor of a Binary Tree III](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/) - Medium
+23. [Create Hello World Function](https://leetcode.com/problems/create-hello-world-function/) - Easy
+24. [Palindrome Number](https://leetcode.com/problems/palindrome-number/) - Easy
+25. [Generate Parentheses](https://leetcode.com/problems/generate-parentheses/) - Medium
+26. [Jump Game II](https://leetcode.com/problems/jump-game-ii/) - Medium
+27. [Spiral Matrix](https://leetcode.com/problems/spiral-matrix/) - Medium
+28. [Jump Game](https://leetcode.com/problems/jump-game/) - Medium
+29. [Plus One](https://leetcode.com/problems/plus-one/) - Easy
+30. [Word Search](https://leetcode.com/problems/word-search/) - Medium
+31. [Word Ladder](https://leetcode.com/problems/word-ladder/) - Hard
+32. [Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/) - Medium
+33. [Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/) - Hard
+34. [Move Zeroes](https://leetcode.com/problems/move-zeroes/) - Easy
+35. [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/) - Medium
+36. [Permutation in String](https://leetcode.com/problems/permutation-in-string/) - Medium
+37. [Rotting Oranges](https://leetcode.com/problems/rotting-oranges/) - Medium
+38. [Remove Sub-Folders from the Filesystem](https://leetcode.com/problems/remove-sub-folders-from-the-filesystem/) - Medium
+39. [Recyclable and Low Fat Products](https://leetcode.com/problems/recyclable-and-low-fat-products/) - Easy
+40. [3Sum](https://leetcode.com/problems/3sum/) - Medium
+41. [Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/) - Hard
+42. [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/) - Medium
+43. [Merge Intervals](https://leetcode.com/problems/merge-intervals/) - Medium
+44. [Climbing Stairs](https://leetcode.com/problems/climbing-stairs/) - Easy
+45. [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) - Easy
+46. [Gas Station](https://leetcode.com/problems/gas-station/) - Medium
+48. [Reorder List](https://leetcode.com/problems/reorder-list/) - Medium
+47. [Word Break](https://leetcode.com/problems/word-break/) - Medium
+49. [Find Peak Element](https://leetcode.com/problems/find-peak-element/) - Medium
+50. [Contains Duplicate II](https://leetcode.com/problems/contains-duplicate-ii/) - Medium
+51. [Basic Calculator](https://leetcode.com/problems/basic-calculator/) - Hard
+52. [Basic Calculator II](https://leetcode.com/problems/basic-calculator-ii/) - Medium
+53. [Lowest Common Ancestor of a Binary Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/) - Medium
+54. [Coin Change](https://leetcode.com/problems/coin-change/) - Medium
+55. [Maximum Swap](https://leetcode.com/problems/maximum-swap/) - Medium
+56. [Minimum Add to Make Parentheses Valid](https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/) - Medium
+57. [Search Suggestions System](https://leetcode.com/problems/search-suggestions-system/) - Medium
+58. [Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit](https://leetcode.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/) - Medium
+59. [The Number of the Smallest Unoccupied Chair](https://leetcode.com/problems/the-number-of-the-smallest-unoccupied-chair/) - Medium
+60. [Plates Between Candles](https://leetcode.com/problems/plates-between-candles/) - Medium
+61. [Remove Element](https://leetcode.com/problems/remove-element/) - Easy
+62. [Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/) - Medium
+63. [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/) - Easy
+64. [Single Number](https://leetcode.com/problems/single-number/) - Easy
+65. [Kth Smallest Element in a BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst/) - Medium
+66. [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/) - Medium
+67. [Missing Number](https://leetcode.com/problems/missing-number/) - Easy
+68. [Alien Dictionary](https://leetcode.com/problems/alien-dictionary/) - Hard
+69. [Design Tic-Tac-Toe](https://leetcode.com/problems/design-tic-tac-toe/) - Medium
+70. [Insert Delete GetRandom O(1)](https://leetcode.com/problems/insert-delete-getrandom-o1/) - Medium
+71. [Next Greater Element I](https://leetcode.com/problems/next-greater-element-i/) - Easy
+72. [Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/) - Medium
+73. [Smallest Range Covering Elements from K Lists](https://leetcode.com/problems/smallest-range-covering-elements-from-k-lists/) - Hard
+74. [Fibonacci Number](https://leetcode.com/problems/fibonacci-number/) - Easy
+75. [Rank Transform of an Array](https://leetcode.com/problems/rank-transform-of-an-array/) - Easy
+76. [Separate Black and White Balls](https://leetcode.com/problems/separate-black-and-white-balls/) - Medium
+77. [Reverse Integer](https://leetcode.com/problems/reverse-integer/) - Easy
+78. [Roman to Integer](https://leetcode.com/problems/roman-to-integer/) - Medium
+79. [Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/) - Medium
+80. [4Sum](https://leetcode.com/problems/4sum/) - Medium
