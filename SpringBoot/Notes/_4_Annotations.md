@@ -22,7 +22,7 @@
 
 ## Other annotations
 ### `@ConditionalOnProperty`
-Bean is created confditionally based on some flag. Consider the following case:
+Bean is created conditionally based on some flag. Consider the following case:
 ![img_30.png](img_30.png)
 
 Now consider two use cases:
@@ -47,6 +47,51 @@ Now in the common code we can implement it like this:
 #### Disadvantages
 1. Misconfiguration can happen
 2. Code complexity increases when over used across many classes. Needs to be used with caution.
+
+---
+
+### `@Profile`
+
+Consider the following use case:
+![img_35.png](img_35.png)
+Here we see there is a need for environment separation for dev, qa, prod etc. since there could be different creds
+
+depending on the environment we might have to have different props like:
+- url and port
+- connection timeout values
+- request timeout values
+- throttle values
+- retry values
+
+now we can have multiple application props for each environment type:
+![img_36.png](img_36.png)
+
+To let spring know what profile to use, we can specify the profile using `spring.profiles.active` prop.
+![img_37.png](img_37.png)
+
+this creates a parent child relationship. if value is in profile file then that overrides the parent else it takes the parent value
+
+if you want to setup the profile at runtime we can provide the profile in the command line:
+
+```bash
+mvn spring-boot:run -Dspring-boot.run.profiles=<PROFILE>
+```
+
+or we can set the profile in the `pom.xml` file like so:
+![img_38.png](img_38.png)
+
+and run the command:
+```bash
+mvn spring-boot:run -P<profile_id>
+```
+
+Now where does the annotation come into play here?
+The annotation is used to specify spring what bean to load based on this annotation. Imagine the following two beans:
+![img_39.png](img_39.png)
+
+Spring will make sure `MySQLConnection` is loaded into context only when `prod` profile is active, else `NoSQLConnection` if `dev` profile is active
+
+---
 
 ### `@Transactional`
 This helps in handling DB transactions to follow ACID props.
