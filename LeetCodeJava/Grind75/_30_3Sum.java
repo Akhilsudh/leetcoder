@@ -7,24 +7,31 @@ import java.util.*;
 
 public class _30_3Sum {
     public List<List<Integer>> threeSum(int[] nums) {
-        Map<Integer, LinkedHashSet<Integer>> map = new HashMap<>();
-        for(int i = 0; i < nums.length; i++) {
-            map.computeIfAbsent(nums[i], k-> new LinkedHashSet<>());
-            map.get(nums[i]).add(i);
-        }
-        List<List<Integer>> result = new ArrayList<>();
-        for(int i = 0; i < nums.length; i++) {
-            int target = - nums[i];
-            map.get(nums[i]).remove(i);
-            for(int j = i + 1; j < nums.length; j++) {
-                map.get(nums[j]).remove(j);
-                if(map.containsKey(target - nums[j]) && !map.get(target - nums[j]).isEmpty()) {
-                    List<Integer> list = new ArrayList<>();
-                    list.add(nums[i]);
-                    list.add(nums[j]);
-                    list.add(target - nums[j]);
-                    result.add(list);
-                    map.get(target - nums[j]).remove(map.get(target - nums[j]).getFirst());
+        Arrays.sort(nums);
+        int l, r, sum;
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        // List<Integer> temp;
+        for(int i = 0; i < nums.length - 2; i++) {
+            if((i > 0) && (nums[i] == nums[i-1])) {
+                continue;
+            }
+            l = i + 1; r = nums.length - 1;
+            while(l < r) {
+                sum = nums[i] + nums[l] + nums[r];
+                if(sum == 0) {
+                    result.add(new ArrayList<Integer>(Arrays.asList(new Integer[] {nums[i], nums[l], nums[r]})));
+                }
+                if(sum <= 0) {
+                    l++;
+                    while(l < r && nums[l] == nums[l - 1]) {
+                        l++;
+                    }
+                }
+                if(sum >= 0) {
+                    r--;
+                    while(l < r && nums[r] == nums[r + 1]) {
+                        r--;
+                    }
                 }
             }
         }
