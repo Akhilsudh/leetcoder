@@ -42,3 +42,7 @@ Matches all method withing any class or package
 #### Args
 matches any method with particular arguments/params
 ![img_49.png](img_49.png)
+
+#### `@Around` with `JointPoint`
+![img_50.png](img_50.png)
+

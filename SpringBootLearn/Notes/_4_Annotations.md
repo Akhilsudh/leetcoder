@@ -101,3 +101,41 @@ Then advise is to run the interceptor
 ![img_34.png](img_34.png)
 
 Then if exception happens we rollback else we commit
+
+![img_51.png](img_51.png)
+
+#### Declarative `@Transactional`
+![img_52.png](img_52.png)
+![img_53.png](img_53.png)
+
+#### Programatic `@Transactional`
+![img_54.png](img_54.png)
+
+![img_55.png](img_55.png)
+
+![img_56.png](img_56.png)
+
+#### Transaction propogation
+`@Transactional(propogation=Propogation.REQUIRED)`
+
+`@Transactional(propogation=Propogation.REQUIRED)`
+
+`@Transactional(propogation=Propogation.SUPPORTS)`
+
+`@Transactional(propogation=Propogation.NOT_SUPPORTED)`
+
+`@Transactional(propogation=Propogation.MANDATORY)`
+
+`@Transactional(propogation=Propogation.NEVER)`
+
+Programatic way of setting popogation
+![img_57.png](img_57.png)
+
+#### Isolation
+![img_58.png](img_58.png)
+
+![img_59.png](img_59.png)
+
+Isolation is also achieved using Shared Lock and Exclusive Locks on DB
+
+![img_60.png](img_60.png)
