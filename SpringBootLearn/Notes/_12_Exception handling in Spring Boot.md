@@ -19,3 +19,9 @@ We can get manual control over the exception being thrown by creating custom Res
 ### Multiple exceptions in same handler
 
 ![img_99.png](img_99.png)
+
+## Using @ControllerAdvice
+
+This is used to determine a class is present to handle global exceptions.
+
+![img_100.png](img_100.png)
