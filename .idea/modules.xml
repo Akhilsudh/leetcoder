@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/LowLevelDesign/ATMDesign/ATMDesign.iml" filepath="$PROJECT_DIR$/LowLevelDesign/ATMDesign/ATMDesign.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LowLevelDesign/LowLevelDesign.iml" filepath="$PROJECT_DIR$/LowLevelDesign/LowLevelDesign.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LowLevelDesign/SnakeAndLadder/SnakeAndLadder.iml" filepath="$PROJECT_DIR$/LowLevelDesign/SnakeAndLadder/SnakeAndLadder.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringBootLearn/SpringBootLearn.iml" filepath="$PROJECT_DIR$/SpringBootLearn/SpringBootLearn.iml" />
       <module fileurl="file://$PROJECT_DIR$/FunctionalProgrammingPlayground/StreamsPlayground.iml" filepath="$PROJECT_DIR$/FunctionalProgrammingPlayground/StreamsPlayground.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LowLevelDesign/VendingMachine/VendingMachine.iml" filepath="$PROJECT_DIR$/LowLevelDesign/VendingMachine/VendingMachine.iml" />
       <module fileurl="file://$PROJECT_DIR$/leetcoder.iml" filepath="$PROJECT_DIR$/leetcoder.iml" />
     </modules>
   </component>

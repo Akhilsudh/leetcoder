@@ -67,8 +67,14 @@ These are seen in previous example. Note that this can be done only to one field
 #### `@GeneratedValue`
 ![img_86.png](img_86.png)
 
+We can have strategy as IDENTITY or SEQUENCE. Sequence has its own advantages:
+1. Separate from table
+2. Generation type table is not used in industry. It creates a new table to manage what id to generate for what table using an atomic counter.
 
-#### `@
+#### `@SequenceGenerator`
+sequenceName specifies the sequence created in the DB. 
+
+#### Composite key
 ![img_83.png](img_83.png)
 
 Using @IdClass:
@@ -78,3 +84,5 @@ Using @IdClass:
 Using @Embeddable:
 
 ![img_85.png](img_85.png)
+
+### JPA Annotations for OneToOne
